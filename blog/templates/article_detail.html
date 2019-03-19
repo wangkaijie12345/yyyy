@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+<h3>{{ article.title }}</h3>
+<p><a href="{% url 'article_delete' article.id %}">删除</a> <a href="{% url 'article_update' article.pk %}">修改</a></p>
+<small>发表时间：{{ article.publish |date:'Y-m-d' }}</small>
+ <p>{{ article.body }}</p>
+
+</body>
+</html>
