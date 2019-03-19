@@ -3,7 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-class Article(models):
+class Article(models.Model):
     STATUS_CHOICE=(('published','发表'),('draft','草稿'))
     title=models.CharField(max_length=200)
     slug=models.SlugField(max_length=100)
