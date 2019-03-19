@@ -1,0 +1,29 @@
+{% extends  'base.html' %}
+{% block header %}
+    <div class="row-fluid">
+        <div class="span8">
+            <a href="/">Python1812</a>
+        </div>
+        <div class="span4">
+            <a href="{% url 'create_article' %}">新增文章</a> &nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="row-fluid">
+        <div class="span12">
+            {% for foo in article %}
+                <h4 style="display: inline-block ;margin-right: 20px">{{ foo.title }}</h4>
+                <a href="{% url 'update_article' foo.id %}">编辑文章</a> &nbsp;&nbsp;&nbsp;
+                <a href="{% url 'article_del' foo.id%}">删除文章</a>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+<style>
+
+</style>
